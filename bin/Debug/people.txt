@@ -1,0 +1,4 @@
+Anna|Trzmiel|22|pracowita,zaradna,punktualna|1
+Oskar|Kochanowski|22|zorganizowany,energiczny,pomyslowy|2
+Maria|Nowak|34|zaradna,uczciwa,pomocna|3
+Piotr|Pasterski|45|energiczny,uprzejmy,szczery|4 

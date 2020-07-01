@@ -1,0 +1,63 @@
+﻿<UserControl x:Class="FutureHR.AllCandidates"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FutureHR"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Background="LightGray">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.5*"/>
+
+        </Grid.RowDefinitions>
+        
+        <TextBlock Grid.ColumnSpan="4" Text="Kandydaci" TextAlignment="Center" VerticalAlignment="Center" FontSize="70"  />
+        <Button Grid.ColumnSpan="4" Name="homeBtn"  Grid.Row="0" Width="40" Height="30"  Background="{x:Null}" HorizontalAlignment="Right" VerticalAlignment="Top" Click="HomeClicked" BorderBrush="{x:Null}" >
+            <WrapPanel Name="home"/>
+
+        </Button >
+        <Image Grid.Column="0" Grid.Row="1"  RenderTransformOrigin="0.5,0.5" Source="Images/human.png" Height="300" VerticalAlignment="Bottom" IsEnabled="False">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1" ScaleX="-1"/>
+                    <SkewTransform AngleY="0" AngleX="0"/>
+                    <RotateTransform Angle="0"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+        <ListView x:Name="human_list"  Grid.Row="1" Grid.Column="1" FontSize="16" Width="auto" Height="360" VerticalAlignment="Bottom" SelectionChanged="HumanSelectionChanged" FontFamily="Lucida Console" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="Black" >
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Width="70" Header="Imię" DisplayMemberBinding="{Binding FirstName}"  >
+
+                    </GridViewColumn>
+                    <GridViewColumn Width="120" Header="Nazwisko" DisplayMemberBinding="{Binding LastName}"/>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+        <Image Grid.Row="1" Grid.Column="3" Source="Images/robot.png" VerticalAlignment="Bottom"/>
+        <ListView x:Name="robot_list"  Grid.Row="1" Grid.Column="2" FontSize="16" Width="auto" Height="360" VerticalAlignment="Bottom" SelectionChanged="RobotSelectionChanged" FontFamily="Lucida Console" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Foreground="Black" >
+            <ListView.View>
+                <GridView >
+                    <GridViewColumn Width="80" Header="Model" DisplayMemberBinding="{Binding Model}"  >
+
+                    </GridViewColumn>
+                    <GridViewColumn Width="110" Header="Numer serii" DisplayMemberBinding="{Binding SerialNumber}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button Grid.ColumnSpan="4" Grid.Row="2" VerticalAlignment="Bottom" Height="30" Margin="5 0 5 20" Width="200" Content="Przeprowadź rozmowę" Click="CandidateClicked" FontFamily="Lucida Console"></Button>
+    </Grid>
+</UserControl>

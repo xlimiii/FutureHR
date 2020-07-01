@@ -1,0 +1,27 @@
+﻿<UserControl x:Class="FutureHR.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FutureHR"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="2.5*"/>
+            <RowDefinition Height="1.5*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="1*"/>
+        <ColumnDefinition Width="1*"/>
+
+        </Grid.ColumnDefinitions>
+        <TextBlock Grid.ColumnSpan="3" Text="FutureHR" FontSize="90" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="Lucida Console"/>
+        <TextBlock Grid.ColumnSpan="3" Grid.Row="1" Text="Gratulacje! Przeniosłeś się w czasie i zostałeś specjalistą działu HR w firmie z przyszłości. Do Twoich głównych obowiązków należy m.in. pozyskiwanie nowych pracowników. Rekrutacja jest o tyle ciekawa, że o miejsca pracy rywalizują nie tylko ludzie, lecz także roboty! " TextWrapping="WrapWithOverflow" FontSize="30" TextAlignment="Justify"  Margin="20" />
+        <Image Grid.Column="0" Grid.RowSpan="3" Source="Images/robot.png" VerticalAlignment="Bottom" Height="180" />
+        <Button Grid.Column="1" Grid.Row="2" Content="Start" Width="150" Height="40" Margin="0 90 0 0" FontSize="20" FontFamily="Lucida Console" Click="StartClicked"/>
+        <Image Grid.Column="2" Grid.RowSpan="3" Source="Images/human.png" VerticalAlignment="Bottom" Height="200" />
+    </Grid>
+</UserControl>

@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="FutureHR.JobInterview"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FutureHR"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="800" Background="LightGray">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.2*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="0.2*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Button Name="returnBtn"  Grid.Column="0" Grid.Row="0" Width="40" Height="30"  Background="{x:Null}" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Left" VerticalAlignment="Top" Click="ReturnClicked" BorderBrush="{x:Null}">
+            <WrapPanel Name="powrot"/>
+
+        </Button >
+        <Button Name="homeBtn" Grid.ColumnSpan="2" Grid.Column="0" Grid.Row="0" Width="40" Height="30"  Background="{x:Null}" FontSize="20" FontFamily="Segoe UI Semibold" HorizontalAlignment="Right" VerticalAlignment="Top" Click="HomeClicked" BorderBrush="{x:Null}">
+            <WrapPanel Name="home"/>
+
+        </Button >
+
+        <TextBlock Grid.Row="1" Grid.ColumnSpan="2" FontSize="55" HorizontalAlignment="Center" VerticalAlignment="Center" Text="Rozmowa Kwalifikacyjna"/>
+        <Grid Grid.Column="0" Grid.Row="2" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+
+                <RowDefinition Height="1*"/>
+
+                <RowDefinition Height="1*"/>
+
+
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" TextAlignment="Center" VerticalAlignment="Center" Margin ="0 10 0 0" TextWrapping="WrapWithOverflow"
+                       FontSize="20" Text="Wybierz, jakie pytanie chcesz zadać kandydatowi: "/>
+            <Button Grid.Row="2" Margin="10" Width="300" Height="60" FontSize="17" FontFamily="Lucida Console" Content="Jak się nazywasz?" Click="NameClicked"/>
+            <Button Grid.Row="3" Margin="10" Width="300" Height="60" FontSize="17" FontFamily="Lucida Console" Content="Ile masz lat?" Click="AgeClicked"/>
+            <Button Grid.Row="4" Margin="10" Width="300" Height="60" FontSize="17" FontFamily="Lucida Console" Content="Jakie są Twoje mocne strony?" Click="FeaturesClicked"/>
+            <Button Grid.Row="1" Margin="10" Width="300" Height="60" FontSize="17" FontFamily="Lucida Console" Content="Przywitaj się" Click="HelloClicked"/>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="2">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <TextBlock Name="odpowiedzi" Grid.Row="1" Grid.Column="1" Background="WhiteSmoke" Margin="30 0 30 0" FontSize="17" TextWrapping="WrapWithOverflow" FontFamily="Lucida Console" ></TextBlock>
+            <WrapPanel Grid.Row="2" Name="ikona" HorizontalAlignment="Right" VerticalAlignment="Bottom"/>
+        </Grid>
+    </Grid>
+</UserControl>
